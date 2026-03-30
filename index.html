@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inkwell</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <h2 onclick="showSection('home')">TVerse</h2>
+
+  <div class="nav-links">
+    <span onclick="showSection('home')">Home</span>
+    <span onclick="showSection('posts')">Posts</span>
+    <span onclick="showSection('topics')">Topics</span>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="section active">
+  <div class="hero">
+    <h1>Think<span>Verse</span></h1>
+    <p>Modern insights on development, design & tech.</p>
+    <button onclick="showSection('posts')">Explore Articles</button>
+  </div>
+</section>
+
+<!-- POSTS -->
+<section id="posts" class="section">
+  <div class="container">
+
+    <h2>Latest Articles</h2>
+
+    <div class="filters">
+      <button class="active" onclick="filterPosts('all', this)">All</button>
+      <button onclick="filterPosts('tech', this)">Tech</button>
+      <button onclick="filterPosts('design', this)">Design</button>
+      <button onclick="filterPosts('js', this)">JavaScript</button>
+    </div>
+
+    <div id="cards" class="grid"></div>
+
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section id="topics" class="section">
+  <div class="container">
+    <h2>Explore Topics</h2>
+
+    <div class="topics-grid">
+      <div onclick="filterPosts('tech'); showSection('posts')">Tech</div>
+      <div onclick="filterPosts('design'); showSection('posts')">Design</div>
+      <div onclick="filterPosts('js'); showSection('posts')">JavaScript</div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section id="article" class="section">
+  <div class="article-container">
+    <span class="back" onclick="showSection('posts')">← Back</span>
+
+    <img id="articleImg">
+    <h1 id="articleTitle"></h1>
+    <p id="articleContent"></p>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="newsletter-box">
+
+    <div>
+      <h2>Never Miss an Article</h2>
+      <p>Weekly insights & tutorials.</p>
+    </div>
+
+    <div id="formBox">
+      <input id="name" placeholder="Your Name">
+      <input id="email" placeholder="Email">
+      <button onclick="subscribe()">Subscribe</button>
+    </div>
+
+    <div id="successBox" class="success">✔ You're in!</div>
+
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
